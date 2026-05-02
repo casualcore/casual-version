@@ -1,0 +1,22 @@
+name: casual-version
+description: Calculate next available version for casual
+
+inputs:
+  release-type: # id of input
+    description: What type of release-type is it? alpha, beta, release
+    required: true
+    default: alpha
+
+outputs:
+  major-minor: # id of output
+    description: major and major
+  build-version:
+    description: version to use and set while compiling
+  casual-version:
+    description: version to use in rpm package
+  casual-release:
+    description: release to use in rpm package
+
+runs:
+  using: node24
+  main: dist/index.js
